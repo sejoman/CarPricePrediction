@@ -90,7 +90,7 @@ namespace CarPricePrediction
                .Append(mlContext.Transforms.NormalizeMinMax(FeaturesColumn))
 
                // Select Task and traineR
-               .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: nameof(CarData.Price), featureColumnName: FeaturesColumn))
+               .Append(mlContext.Regression.Trainers.LbfgsPoissonRegression(labelColumnName: nameof(CarData.Price), featureColumnName: FeaturesColumn))
                ;
 
 
